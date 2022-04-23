@@ -16,12 +16,14 @@ repositories {
 }
 
 dependencies {
-    implementation ("org.springframework.boot:spring-boot-starter-webflux")
     implementation ("org.springframework.boot:spring-boot-starter-actuator")
-    annotationProcessor ("org.springframework.boot:spring-boot-configuration-processor")
     testImplementation ("org.springframework.boot:spring-boot-starter-test")
+    implementation ("org.springframework.boot:spring-boot-starter-webflux")
     implementation ("org.springframework.cloud:spring-cloud-starter-gateway")
     implementation ("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
+    implementation ("org.springframework.cloud:spring-cloud-starter-config")
+    implementation ("org.springframework.cloud:spring-cloud-starter-bus-amqp")
+    testImplementation ("io.projectreactor:reactor-test")
     implementation ("org.springdoc:springdoc-openapi-webflux-ui:1.5.10")
 }
 
