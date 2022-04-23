@@ -8,8 +8,8 @@ on:
 env:
   DOCKER_IMAGE_NAME: devraul/iplease-gateway-server
   DOCKER_CONTAINER_NAME: gateway-server
-  DOCKER_CONTAINER_PORT: 10020
-  DOCKER_FORWARD_PORT: 10020
+  DOCKER_CONTAINER_PORT: 10000
+  DOCKER_FORWARD_PORT: 10000
 jobs:
   ci:
     runs-on: ubuntu-latest
