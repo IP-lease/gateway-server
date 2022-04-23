@@ -25,7 +25,6 @@ dependencies {
     implementation ("org.springdoc:springdoc-openapi-webflux-ui:1.5.10")
 }
 
-
 dependencyManagement {
     imports {
         val springCloudVersion = "2021.0.0"
@@ -42,4 +41,8 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+tasks.getByName<Jar>("jar") {
+    enabled = false
 }
