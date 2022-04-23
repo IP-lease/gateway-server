@@ -8,12 +8,14 @@ spring:
     port: ${MQ_PORT}
     username: ${MQ_USERNAME}
     password: ${MQ_PASSWORD}
+    ssl:
+      enabled: true
   application.name: gateway-server
   config:
-    import: "optional:configserver:${CONFIG_URL}"
+    import: "optional:configserver:http://${CONFIG_HOSTNAME}:${CONFIG_PORT}"
   cloud:
     config:
-      uri: ${CONFIG_URL}
+      uri: http://${CONFIG_URL}:${CONFIG_PORT}
 management:
   endpoints:
     web:
