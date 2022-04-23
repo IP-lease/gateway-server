@@ -1,0 +1,29 @@
+server:
+  port: ${DOCKER_SERVER_PORT}
+  address: ${DOCKER_SERVER_IP}
+  shutdown: graceful
+spring:
+  rabbitmq:
+    host: ${MQ_HOSTNAME}
+    port: ${MQ_PORT}
+    username: ${MQ_USERNAME}
+    password: ${MQ_PASSWORD}
+  application.name: gateway-server
+  config:
+    import: "optional:configserver:${CONFIG_URL}"
+  cloud:
+    config:
+      uri: ${CONFIG_URL}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
+eureka:
+  instance:
+    hostname: ${EUREKA_HOSTNAME}
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://${EUREKA_HOSTNAME}:${EUREKA_PORT}/eureka/
