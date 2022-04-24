@@ -15,7 +15,7 @@ spring:
     import: "optional:configserver:http://${CONFIG_HOSTNAME}:${CONFIG_PORT}"
   cloud:
     config:
-      uri: http://${CONFIG_URL}:${CONFIG_PORT}
+      uri: http://${CONFIG_HOSTNAME}:${CONFIG_PORT}
 management:
   endpoints:
     web:
